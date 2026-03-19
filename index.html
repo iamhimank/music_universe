@@ -7,7 +7,7 @@
     body {
       margin: 0;
       font-family: Arial;
-      background: black;
+      background: linear-gradient(135deg, #0f0f0f, #000);
       color: white;
       text-align: center;
     }
@@ -16,6 +16,37 @@
       margin: 20px;
       font-size: 32px;
       letter-spacing: 2px;
+    }
+
+    input {
+      padding: 10px;
+      width: 60%;
+      border-radius: 20px;
+      border: none;
+      outline: none;
+      margin-bottom: 20px;
+    }
+
+    .trending {
+      padding: 20px;
+    }
+
+    .trending h2 {
+      margin-bottom: 10px;
+    }
+
+    .trending-box {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .trend {
+      padding: 10px 20px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
     }
 
     .container {
@@ -27,22 +58,24 @@
 
     .card {
       position: relative;
-      height: 340px;
+      height: 380px;
       border-radius: 20px;
       overflow: hidden;
       cursor: pointer;
       transition: 0.4s;
       animation: float 4s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0%,100% { transform: translateY(0); }
-      50% { transform: translateY(-12px); }
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
     }
 
     .card:hover {
       transform: scale(1.06);
       box-shadow: 0 0 30px #00ffcc;
+    }
+
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
     }
 
     .card img {
@@ -61,22 +94,12 @@
       text-align: left;
     }
 
-    .overlay h2 {
-      margin: 5px 0;
-    }
-
-    .overlay p {
-      font-size: 13px;
-      opacity: 0.8;
-    }
-
     .songs {
       font-size: 12px;
       margin-top: 8px;
       color: #00ffcc;
     }
 
-    /* 🎵 MUSIC WAVE */
     .wave {
       display: flex;
       gap: 3px;
@@ -90,71 +113,92 @@
       animation: wave 1s infinite ease-in-out;
     }
 
-    .wave span:nth-child(2) { animation-delay: 0.2s; }
-    .wave span:nth-child(3) { animation-delay: 0.4s; }
-    .wave span:nth-child(4) { animation-delay: 0.6s; }
-
     @keyframes wave {
       0%,100% { height: 10px; }
       50% { height: 25px; }
+    }
+
+    iframe {
+      margin-top: 10px;
+      width: 100%;
+      border-radius: 12px;
     }
   </style>
 </head>
 
 <body>
 
-<h1>🎧 MUSIC UNIVERSE</h1>
+<h1>🎧 MUSIC UNIVERSE 🎧</h1>
+
+<!-- 🔍 SEARCH -->
+<input type="text" id="search" placeholder="Search artist...">
+
+<!-- 🔥 TRENDING -->
+<div class="trending">
+  <h2>🔥 Trending Now</h2>
+  <div class="trending-box">
+    <div class="trend">Dhanda Nyoliwala</div>
+    <div class="trend">AP Dhillon</div>
+    <div class="trend">Karan Aujla</div>
+    <div class="trend">Honey Singh</div>
+  </div>
+</div>
 
 <div class="container">
 
-<!-- Karan Aujla -->
-<div class="card" onclick="go('https://open.spotify.com/search/karan%20aujla')">
-  <img src="https://i.imgur.com/8Km9tLL.jpg">
+<!-- CARD -->
+<div class="card">
+  <img src="https://i.pinimg.com/736x/0b/03/9f/0b039fcbe1d226e2838a93291d320694.jpg">
   <div class="overlay">
-    <h2>Karan Aujla</h2>
-    <p>Punjabi Rap & Melody</p>
-    <div class="songs">
-      Softly • Players • Admirin You • On Top <br> + many more
-    </div>
+    <h2>Dhanda Nyoliwala</h2>
+    <p>The GOAT of Haryanvi Rap and Music</p>
+    <div class="songs">Not Guilty • Tension • Paradox </div>
+
+    <iframe src="https://open.spotify.com/artist/2rN8LHqK4TBI7y3d9POvJb"></iframe>
+
     <div class="wave"><span></span><span></span><span></span><span></span></div>
   </div>
 </div>
 
-<!-- Honey Singh -->
-<div class="card" onclick="go('https://open.spotify.com/search/yo%20yo%20honey%20singh')">
-  <img src="https://i.imgur.com/J5LVHEL.jpg">
+  
+<!-- CARD -->
+<div class="card">
+  <img src="https://i.pinimg.com/736x/0b/03/9f/0b039fcbe1d226e2838a93291d320694.jpg">
   <div class="overlay">
     <h2>Honey Singh</h2>
     <p>Rap & Party Music</p>
-    <div class="songs">
-      Blue Eyes • Brown Rang • Desi Kalakaar • Lungi Dance <br> + many more
-    </div>
+    <div class="songs">Blue Eyes • Brown Rang • Desi Kalakaar</div>
+
+    <iframe src="https://open.spotify.com/embed/track/4uLU6hMCjMI75M1A2tKUQC"></iframe>
+
     <div class="wave"><span></span><span></span><span></span><span></span></div>
   </div>
 </div>
 
-<!-- AP Dhillon -->
-<div class="card" onclick="go('https://open.spotify.com/search/ap%20dhillon')">
-  <img src="https://i.imgur.com/5N9y1rF.jpg">
+<!-- CARD -->
+<div class="card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkfsr-H5ZDZznJQW064zJKxxpU2qaXFH8Zog&s">
+  <div class="overlay">
+    <h2>Karan Aujla</h2>
+    <p>Punjabi Rap & Melody</p>
+    <div class="songs">Softly • Players • Admirin You</div>
+
+    <iframe src="https://open.spotify.com/embed/track/3n3Ppam7vgaVa1iaRUc9Lp"></iframe>
+
+    <div class="wave"><span></span><span></span><span></span><span></span></div>
+  </div>
+</div>
+
+<!-- CARD -->
+<div class="card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoAorqXwuQO-dwzt2Ce536TsZngqy06axaog&s">
   <div class="overlay">
     <h2>AP Dhillon</h2>
     <p>Global Punjabi Vibe</p>
-    <div class="songs">
-      Brown Munde • Insane • Summer High • Excuses <br> + many more
-    </div>
-    <div class="wave"><span></span><span></span><span></span><span></span></div>
-  </div>
-</div>
+    <div class="songs">Brown Munde • Insane • Excuses</div>
 
-<!-- Sidhu Moosewala -->
-<div class="card" onclick="go('https://open.spotify.com/search/sidhu%20moosewala')">
-  <img src="https://i.imgur.com/6RL9yHn.jpg">
-  <div class="overlay">
-    <h2>Sidhu Moosewala</h2>
-    <p>Punjabi Legend</p>
-    <div class="songs">
-      295 • So High • Same Beef • The Last Ride <br> + many more
-    </div>
+    <iframe src="https://open.spotify.com/embed/track/5HCyWlXZPP0y6Gqq8TgA20"></iframe>
+
     <div class="wave"><span></span><span></span><span></span><span></span></div>
   </div>
 </div>
@@ -162,9 +206,17 @@
 </div>
 
 <script>
-function go(url){
-  window.open(url, "_blank");
-}
+const search = document.getElementById("search");
+
+search.addEventListener("keyup", function() {
+  let value = this.value.toLowerCase();
+  let cards = document.querySelectorAll(".card");
+
+  cards.forEach(card => {
+    let text = card.innerText.toLowerCase();
+    card.style.display = text.includes(value) ? "block" : "none";
+  });
+});
 </script>
 
 </body>
