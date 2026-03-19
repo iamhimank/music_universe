@@ -123,6 +123,14 @@
       width: 100%;
       border-radius: 12px;
     }
+  #player {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: black;
+  padding: 10px;
+  z-index: 1000;
+}
   </style>
 </head>
 
@@ -154,7 +162,11 @@
     <p>The GOAT of Haryanvi Rap and Music</p>
     <div class="songs">Not Guilty • Tension • Paradox </div>
 
-    <iframe src="https://open.spotify.com/artist/2rN8LHqK4TBI7y3d9POvJb"></iframe>
+    <iframe style="border-radius:12px" 
+src="https://open.spotify.com/embed/track/4YPSg93DDJW9Uf4IgklCHc" 
+width="100%" height="80" frameBorder="0" 
+allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+</iframe>
 
     <div class="wave"><span></span><span></span><span></span><span></span></div>
   </div>
@@ -169,7 +181,11 @@
     <p>Rap & Party Music</p>
     <div class="songs">Blue Eyes • Brown Rang • Desi Kalakaar</div>
 
-    <iframe src="https://open.spotify.com/embed/track/4uLU6hMCjMI75M1A2tKUQC"></iframe>
+    <iframe style="border-radius:12px" 
+src="https://open.spotify.com/embed/track/1z1Hg7Vb0AhHDiEmnDE79l" 
+width="100%" height="80" frameBorder="0" 
+allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+</iframe>
 
     <div class="wave"><span></span><span></span><span></span><span></span></div>
   </div>
@@ -183,7 +199,11 @@
     <p>Punjabi Rap & Melody</p>
     <div class="songs">Softly • Players • Admirin You</div>
 
-    <iframe src="https://open.spotify.com/embed/track/3n3Ppam7vgaVa1iaRUc9Lp"></iframe>
+    <iframe style="border-radius:12px" 
+src="https://open.spotify.com/embed/track/2s0GZ6wqV9vVwZ0pniS3pS" 
+width="100%" height="80" frameBorder="0" 
+allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+</iframe>
 
     <div class="wave"><span></span><span></span><span></span><span></span></div>
   </div>
@@ -197,7 +217,12 @@
     <p>Global Punjabi Vibe</p>
     <div class="songs">Brown Munde • Insane • Excuses</div>
 
-    <iframe src="https://open.spotify.com/embed/track/5HCyWlXZPP0y6Gqq8TgA20"></iframe>
+    <iframe style="border-radius:12px" 
+src="https://open.spotify.com/embed/track/6SQ7R2V8l6k4b7cXbR8V5Y" 
+width="100%" height="80" frameBorder="0" 
+allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+</iframe>
+  
 
     <div class="wave"><span></span><span></span><span></span><span></span></div>
   </div>
@@ -217,7 +242,29 @@ search.addEventListener("keyup", function() {
     card.style.display = text.includes(value) ? "block" : "none";
   });
 });
+<script>
+function playSong(url){
+  document.getElementById("musicPlayer").src = url;
+}
 </script>
+</script>
+  <body>
+
+  <!-- TERA SAARA CONTENT (cards, search, etc) -->
+
+  
+  <!-- 🎧 PLAYER YAHAN DAAL -->
+  <div id="player">
+    <iframe id="musicPlayer"
+      style="border-radius:12px"
+      width="100%"
+      height="80"
+      frameBorder="0"
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+    </iframe>
+  </div>
+
+</body>
 
 </body>
 </html>
